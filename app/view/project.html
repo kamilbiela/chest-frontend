@@ -1,0 +1,33 @@
+<h1>
+    Project name
+</h1>
+
+<table class="ui celled striped table">
+    <thead>
+        <tr>
+            <th colspan="3">
+                Branch
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="branch in ['master', 'develop', 'feature/1', 'crazy-experiment']">
+            <td class="collapsing ">
+                {{branch}}
+            </td>
+            <td>
+                10 hours ago
+            </td>
+            <td class="right aligned collapsing">
+                <button ui-sref="main.project.artifactList.artifact({projectName: 'name', artifactId: 123})"
+                        class="tiny ui button">
+                    Show last
+                </button>
+                <button ui-sref="main.project.artifactList({projectName: 'name'})"
+                        class="tiny ui button">
+                    Show all
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

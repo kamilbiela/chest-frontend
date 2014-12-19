@@ -1,0 +1,23 @@
+<h1>Settings</h1>
+
+<h3 class="ui dividing header">Global</h4>
+<div class="row">
+    <div class="ui column">
+        <div class="ui form">
+            <form>
+                <div class="field">
+                    <label>Token</label>
+
+                    <div class="ui icon message">
+                        <i class="lock icon"></i>
+                        <div class="content">
+
+                            <p ng-if="isLoaded">{{apiToken}}</p>
+                            <p ng-if="!isLoaded"><i class="icon spinner spin"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Chest">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chest</title>
+
+    <link href="bower_components/semantic/dist/semantic.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-cookie/angular-cookie.min.js"></script>
+    <script src="dist/app.js"></script>
+</head>
+<body ng-controller="BodyController">
+
+<div class="ui grid">
+    <div class="sixteen wide column" ui-view="menuTop"></div>
+</div>
+
+<div class="ui padded grid">
+    <div ng-if="layout=='twocolumn'" class="three wide column" ui-view="menu"></div>
+    <div
+      ng-class="{
+        'thirteen wide column': layout=='twocolumn',
+        'sixteen wide column': layout=='onecolumn'}
+      "
+      ui-view="content"
+    >
+    </div>
+</div>
+
+</body>
+</html>
+<!--<div class="ui vertically padded page grid">-->

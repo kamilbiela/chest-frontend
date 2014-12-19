@@ -1,0 +1,26 @@
+<h1>reponame/branch</h1>
+
+<table class="ui celled striped table">
+    <thead>
+        <tr>
+            <th colspan="3">
+                Commit id
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="commitid in ['abiqu1', 'alkcklz', 'zxmcn1', 'jsd1245']">
+            <td class="collapsing">
+                {{commitid}}
+            </td>
+            <td>
+                10 hours ago
+            </td>
+            <td class="right aligned collapsing">
+                <button ui-sref="main.project.artifactList.artifact({projectName: 'name', artifactId: 123})" class="tiny ui button">
+                    Show
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
