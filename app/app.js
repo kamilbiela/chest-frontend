@@ -1,6 +1,5 @@
 angular.module('Chest', ['ui.router']);
 
-
 angular.module('Chest').config(function($httpProvider) {
   $httpProvider.interceptors.push(function(AuthService, $q, $rootScope, EVENT_ENUM) {
     function isApiCall(url) {
@@ -8,8 +7,7 @@ angular.module('Chest').config(function($httpProvider) {
     }
 
     return {
-     'request': function(config) {
-
+      'request': function(config) {
         if (isApiCall(config.url)) {
           var params = config.params || {};
           params.token = AuthService.getToken();
@@ -21,7 +19,6 @@ angular.module('Chest').config(function($httpProvider) {
 
       // optional method
       'responseError': function(rejection) {
-
         if (isApiCall(rejection.config.url) && rejection.status === 403) {
           $rootScope.$emit(EVENT_ENUM.USER_TOKEN_ERROR);
         }
@@ -30,7 +27,7 @@ angular.module('Chest').config(function($httpProvider) {
       }
     };
   });
-})
+});
 
 angular.module('Chest').run(function($state, $rootScope, EVENT_ENUM, AuthService) {
   $rootScope.$on(EVENT_ENUM.USER_TOKEN_ERROR, function() {

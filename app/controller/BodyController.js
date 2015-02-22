@@ -12,5 +12,5 @@ angular.module('Chest').controller('BodyController', function($scope, $rootScope
   $rootScope.$on('$destroy', function() {
     oneColCb();
     twoColCb();
-  })
+  });
 });

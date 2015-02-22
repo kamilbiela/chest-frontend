@@ -88,7 +88,7 @@ angular.module('Chest').config(function ($stateProvider, $urlRouterProvider, CON
           templateUrl: "/app/view/artifact.html"
         }
       }
-    })
+    });
 });
 
 angular.module('Chest').run(function ($rootScope, AuthService, EVENT_ENUM, $state) {
