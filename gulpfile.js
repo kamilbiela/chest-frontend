@@ -31,13 +31,13 @@ gulp.task('build', function () {
     .pipe(uglify(uglifyOptions))
     .pipe(sourcemaps.write('.', {sourceRoot: './app/'}))
     .pipe(gulp.dest('dist'))
-    .pipe(connect.reload())
+    .pipe(connect.reload());
 });
 
 gulp.task('lint', function() {
   return gulp.src(jsFiles)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+    .pipe(jshint.reporter('default'));
 });
 
 gulp.task('watch', function () {
